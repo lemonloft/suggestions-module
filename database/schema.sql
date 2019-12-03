@@ -4,37 +4,37 @@ CREATE DATABASE lemonloft;
 
 USE lemonloft;
 
-CREATE TABLE activities (
-  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  title VARCHAR(50),
-  image_url VARCHAR(300),
-  cost INT,
-  rating DECIMAL,
-  num_comments INT,
-  location_id INT,
-  FOREIGN KEY (location_id) REFERENCES locations (id)
-)
+CREATE TABLE `locations` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `location` VARCHAR(50)
+);
 
-CREATE TABLE locations (
-  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  location VARCHAR(50)
-)
+CREATE TABLE `images` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `url` VARCHAR(300)
+);
 
-CREATE TABLE images (
-  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  url VARCHAR(300)
-)
+CREATE TABLE `activities` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `title` VARCHAR(300),
+  `imageUrl` VARCHAR(300),
+  `cost` INT,
+  `rating` DECIMAL(3, 2),
+  `numComments` INT,
+  `location` VARCHAR(50),
+  -- FOREIGN KEY (location) REFERENCES locations (id)
+);
 
-CREATE TABLE homes (
-  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  title VARCHAR(50),
-  image_url VARCHAR(300),
-  image_id INT,
-  cost INT,
-  rating DECIMAL,
-  num_comments INT,
-  location_id INT,
-  room_type VARCHAR(50),
-  FOREIGN KEY (image_id) REFERENCES images (id),
-  FOREIGN KEY (location_id) REFERENCES locations (id)
-)
+CREATE TABLE `listings` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `title` VARCHAR(50),
+  `imageUrl` VARCHAR(300),
+  `image` INT,
+  `cost` INT,
+  `rating` DECIMAL(3, 2),
+  `numComments` INT,
+  `location` INT,
+  `roomType` VARCHAR(50),
+  FOREIGN KEY (image) REFERENCES images (id),
+  FOREIGN KEY (location) REFERENCES locations (id)
+);

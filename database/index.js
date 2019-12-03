@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('lemonloft', 'root', 'root', {
+const sequelize = new Sequelize('lemonloft', 'root', '', {
   host: 'localhost',
   dialect: 'mysql',
   pool: {
@@ -26,9 +26,9 @@ var Activity = sequelize.define('activities', {
     autoIncrement: true
   },
   'title': {
-    type: Sequelize.STRING(50)
+    type: Sequelize.STRING(300)
   },
-  'image_url': {
+  'imageUrl': {
     type: Sequelize.STRING(300)
   },
   'cost': {
@@ -37,12 +37,14 @@ var Activity = sequelize.define('activities', {
   'rating': {
     type: Sequelize.DECIMAL
   },
-  'num_comments': {
+  'numComments': {
     type: Sequelize.INTEGER
   },
-  'location_id': {
-    type: Sequelize.INTEGER
+  'location': {
+    type: Sequelize.STRING
   }
+}, {
+    timestamps: false
 });
 
 var Location = sequelize.define('locations', {
@@ -54,6 +56,8 @@ var Location = sequelize.define('locations', {
   'location': {
     type: Sequelize.STRING(50)
   }
+}, {
+  timestamps: false
 });
 
 var Image = sequelize.define('images', {
@@ -65,9 +69,11 @@ var Image = sequelize.define('images', {
   'url': {
     type: Sequelize.STRING(300)
   }
+}, {
+  timestamps: false
 });
 
-var Home = sequelize.define('homes', {
+var Listing = sequelize.define('listings', {
   'id': {
     type: Sequelize.INTEGER,
     primaryKey: true,
@@ -76,10 +82,10 @@ var Home = sequelize.define('homes', {
   'title': {
     type: Sequelize.STRING(50)
   },
-  'image_url': {
+  'imageUrl': {
     type: Sequelize.STRING(300)
   },
-  'image_id': {
+  'image': {
     type: Sequelize.INTEGER
   },
   'cost': {
@@ -88,21 +94,23 @@ var Home = sequelize.define('homes', {
   'rating': {
     type: Sequelize.DECIMAL
   },
-  'num_comments': {
+  'numComments': {
     type: Sequelize.INTEGER
   },
-  'location_id': {
+  'location': {
     type: Sequelize.INTEGER
   },
-  'room_type': {
+  'roomType': {
     type: Sequelize.STRING(50)
   }
+}, {
+  timestamps: false
 });
 
 module.exports = {
   sequelize,
   Activity,
+  Listing,
   Location,
-  Image,
-  Home
+  Image
 }
