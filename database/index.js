@@ -29,7 +29,7 @@ var Activity = sequelize.define('activities', {
   'title': {
     type: Sequelize.STRING(300)
   },
-  'imageUrl': {
+  'image_url': {
     type: Sequelize.STRING(300)
   },
   'cost': {
@@ -38,12 +38,15 @@ var Activity = sequelize.define('activities', {
   'rating': {
     type: Sequelize.FLOAT
   },
-  'numComments': {
+  'num_comments': {
     type: Sequelize.INTEGER
   },
   'location': {
-    type: Sequelize.STRING(100)
+    type: Sequelize.STRING(500)
   }
+  // 'location_id': {
+  //   type: Sequelize.INTEGER
+  // }
 }, {
     timestamps: false
 });
@@ -55,7 +58,7 @@ var Activity = sequelize.define('activities', {
 //     autoIncrement: true
 //   },
 //   'location': {
-//     type: Sequelize.STRING(50)
+//     type: Sequelize.STRING(100)
 //   }
 // }, {
 //   timestamps: false
@@ -83,7 +86,7 @@ var Listing = sequelize.define('listings', {
   'title': {
     type: Sequelize.STRING(300)
   },
-  'mainImageUrl': {
+  'main_image_url': {
     type: Sequelize.STRING(300)
   },
   // 'image': {
@@ -95,23 +98,32 @@ var Listing = sequelize.define('listings', {
   'rating': {
     type: Sequelize.FLOAT
   },
-  'numComments': {
+  'num_comments': {
     type: Sequelize.INTEGER
   },
+  // 'location_id': {
+  //   type: Sequelize.INTEGER
+  // },
   'location': {
-    type: Sequelize.STRING(100)
+    type: Sequelize.STRING(500)
   },
-  'roomType': {
+  'room_type': {
     type: Sequelize.STRING(100)
   }
 }, {
   timestamps: false
 });
 
+// Listing.belongsTo(Location);
+// Activity.belongsTo(Location);
+
+// Listing.hasOne(Location);
+// Activity.hasOne(Location);
+
 module.exports = {
   sequelize,
   Activity,
   Listing
-  // Location,
+  // Location
   // Image
 }

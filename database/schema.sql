@@ -6,7 +6,7 @@ USE lemonloft;
 
 -- CREATE TABLE `locations` (
 --   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
---   `location` VARCHAR(50)
+--   `location` VARCHAR(100)
 -- );
 
 -- CREATE TABLE `images` (
@@ -17,24 +17,28 @@ USE lemonloft;
 CREATE TABLE `activities` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `title` VARCHAR(300),
-  `imageUrl` VARCHAR(300),
+  `image_url` VARCHAR(300),
   `cost` INT,
   `rating` FLOAT,
-  `numComments` INT,
-  `location` VARCHAR(100)
-  -- FOREIGN KEY (location) REFERENCES locations (id)
+  `num_comments` INT,
+  `location` VARCHAR(500)
+  -- `location_id` INT,
+  -- CONSTRAINT `fk_activities_location_id`
+  -- FOREIGN KEY (location_id) REFERENCES locations (id) ON DELETE CASCADE
 );
 
 CREATE TABLE `listings` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `title` VARCHAR(300),
-  `mainImageUrl` VARCHAR(300),
+  `main_image_url` VARCHAR(300),
   -- `image` INT,
   `cost` INT,
   `rating` FLOAT,
-  `numComments` INT,
-  `location` VARCHAR(100),
-  `roomType` VARCHAR(100)
+  `num_comments` INT,
+  -- `location_id` INT,
+  `location` VARCHAR(500),
+  `room_type` VARCHAR(100),
   -- FOREIGN KEY (image) REFERENCES images (id),
-  -- FOREIGN KEY (location) REFERENCES locations (id)
+  -- CONSTRAINT `fk_listings_location_id`
+  -- FOREIGN KEY (location_id) REFERENCES locations (id) ON DELETE CASCADE
 );

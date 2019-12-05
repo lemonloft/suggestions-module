@@ -13,7 +13,7 @@ const seedActivity = () => {
     let thing = activityThings[Math.floor(Math.random() * activityThings.length)];
     let title = `${verb} ${thing} ${location}`;
     let rating = null;
-    let numComments = null;
+    let num_comments = null;
 
     if (i % 3 === 0) {
       rating = 5;
@@ -22,17 +22,17 @@ const seedActivity = () => {
     };
 
     if (i % 3 === 0) {
-      numComments = Math.ceil((Math.random() * (1000 - 90) + 90));
+      num_comments = Math.ceil((Math.random() * (1000 - 90) + 90));
     } else {
-      numComments = Math.ceil((Math.random() * (100 - 1) + 1));
+      num_comments = Math.ceil((Math.random() * (100 - 1) + 1));
     };
 
     activity.id = i;
     activity.title = title;
-    activity.imageUrl = faker.image.imageUrl();
+    activity.image_url = faker.image.imageUrl();
     activity.cost = Math.ceil((Math.random() * (150 - 51) + 50));
     activity.rating = rating;
-    activity.numComments = numComments;
+    activity.num_comments = num_comments;
     activity.location = location;
 
     Activity.sync({ force: true })
@@ -76,7 +76,7 @@ const seedListing = () => {
     let desc = listingDescs[Math.floor(Math.random() * listingDescs.length)];
     let title = `${adj} ${type[0]} ${desc} ${location}`
     let rating = null;
-    let numComments = null;
+    let num_comments = null;
 
     if (i % 3 === 0) {
       rating = 5;
@@ -85,24 +85,25 @@ const seedListing = () => {
     };
 
     if (i % 3 === 0) {
-      numComments = Math.ceil((Math.random() * (1000 - 90) + 90));
+      num_comments = Math.ceil((Math.random() * (1000 - 90) + 90));
     } else {
-      numComments = Math.ceil((Math.random() * (100 - 1) + 1));
+      num_comments = Math.ceil((Math.random() * (100 - 1) + 1));
     };
 
     listing.id = i;
     listing.title = title;
-    listing.mainImageUrl = faker.image.imageUrl();
+    listing.main_image_url = faker.image.imageUrl();
     // listing.image = faker.image.imageUrl();
     listing.cost = Math.ceil((Math.random() * (400 - 70) + 70))
     listing.rating = rating;
-    listing.numComments = numComments;
+    listing.num_comments = num_comments;
     listing.location = location;
-    listing.roomType = type[1];
+    // listing.location_id = location_id;
+    listing.room_type = type[1];
 
     Listing.sync({ force: true })
     .then(() => {
-      return Listing.create(listing)
+      return Listing.create(listing);
     })
     .catch((err) => {
       console.log(`Error is ${err}`);
@@ -111,3 +112,37 @@ const seedListing = () => {
 };
 
 seedListing();
+
+// const seedLocation = () => {
+//   for (let i = 0; i <= 100; i++) {
+//     let location = {};
+
+//     location.id = i;
+//     location.location = faker.address.city();
+//     // { location } = faker.address.city();
+
+//     Location.sync( { force: true })
+//     .then(() => {
+//       return Location.create(location)
+//       // .then((locations) => {
+//       //   return Listing.update(
+//       //     {location: locations.location}
+//       //   )
+//       // })
+//       // .then((locations) => {
+//       //   return Activity.update(
+//       //     {location: locations.location}
+//       //   )
+//       // })
+//       // .catch((err) => {
+//       //   console.log(`Error is ${err}`);
+//       // });
+//     })
+//     .catch((err) => {
+//       console.log(`Err is ${err}`);
+//     });
+    
+//   }
+// }
+
+// seedLocation();
