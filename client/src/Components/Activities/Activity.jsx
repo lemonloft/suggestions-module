@@ -10,6 +10,12 @@ const Activity = ({ activity }) => {
       <div className="activity-item-cost">
         {`From $${activity.cost}/per person`}
       </div>
+      <div className="activity-item-rating">
+        {activity.rating}
+      </div>
+      <div className="activity-item-num-comments">
+        {`(${activity.num_comments})`}
+      </div>
     </div>
   )
 }
