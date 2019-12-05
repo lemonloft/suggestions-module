@@ -9,6 +9,7 @@ const seedActivity = () => {
     let activity = {};
 
     let location = faker.address.city();
+    let image_url = `https://loremflickr.com/320/240/travel/all?random`;
     let verb = activityVerbs[Math.floor(Math.random() * activityVerbs.length)];
     let thing = activityThings[Math.floor(Math.random() * activityThings.length)];
     let title = `${verb} ${thing} ${location}`;
@@ -29,7 +30,7 @@ const seedActivity = () => {
 
     activity.id = i;
     activity.title = title;
-    activity.image_url = faker.image.imageUrl();
+    activity.image_url = `${image_url}=${i}`;
     activity.cost = Math.ceil((Math.random() * (150 - 51) + 50));
     activity.rating = rating;
     activity.num_comments = num_comments;
@@ -71,6 +72,7 @@ const seedListing = () => {
     let listing = {};
     
     let location = faker.address.city();
+    let main_image_url = `https://loremflickr.com/320/240/luxury,property/all?random`;
     let adj = listingAdjs[Math.floor(Math.random() * listingAdjs.length)];
     let type = listingTypes[Math.floor(Math.random() * listingTypes.length)];
     let desc = listingDescs[Math.floor(Math.random() * listingDescs.length)];
@@ -92,7 +94,7 @@ const seedListing = () => {
 
     listing.id = i;
     listing.title = title;
-    listing.main_image_url = faker.image.imageUrl();
+    listing.main_image_url = `${main_image_url}=${i}`;
     // listing.image = faker.image.imageUrl();
     listing.cost = Math.ceil((Math.random() * (400 - 70) + 70))
     listing.rating = rating;
