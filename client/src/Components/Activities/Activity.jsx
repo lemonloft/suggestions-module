@@ -16,6 +16,7 @@ const Activity = ({ activity }) => {
       <div className="activity-item-num-comments">
         {`(${activity.num_comments})`}
       </div>
+      <br></br>
     </div>
   )
 }
