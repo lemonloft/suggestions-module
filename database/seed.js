@@ -1,11 +1,11 @@
 const faker = require('faker');
 const { Activity, Listing } = require('./index.js');
 
-const activityVerbs = ['Experience', 'Enjoy', 'Discover', 'Embrace', 'Visit'];
-const activityThings = ['a photoshoot in', 'a tour of', 'a walking tour in', 'an art experience in', 'cuisine extraordinaire in', 'a nature tour in', 'a flight around'];
+const activityVerbs = ['Experience', 'Experience', 'Expand your travels with', 'Enjoy', 'Discover', 'Embrace', 'Savor', 'Delight in', 'Try'];
+const activityThings = ['a photoshoot in', 'a tour of', 'a walking tour in', 'an art show in', 'cuisine extraordinaire in', 'a nature tour in', 'a flight around'];
 
 const seedActivity = () => {
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i <= 100; i++) {
     let activity = {};
 
     let location = faker.address.city();
@@ -66,7 +66,7 @@ const listingTypes = [
 const listingDescs = ['in the heart of', 'in the center of', 'in', 'in', 'in', 'close to', 'with views of', 'with amazing views of', 'among olive trees in', 'with garden in'];
   
 const seedListing = () => {
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i <= 100; i++) {
 
     let listing = {};
     
@@ -92,8 +92,8 @@ const seedListing = () => {
 
     listing.id = i;
     listing.title = title;
-    listing.imageUrl = faker.image.imageUrl();
-    listing.image = faker.image.imageUrl();
+    listing.mainImageUrl = faker.image.imageUrl();
+    // listing.image = faker.image.imageUrl();
     listing.cost = Math.ceil((Math.random() * (400 - 70) + 70))
     listing.rating = rating;
     listing.numComments = numComments;
