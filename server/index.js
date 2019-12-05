@@ -16,9 +16,9 @@ app.get('/suggestions/activities', (req, res) => {
   Activity.findAll().then(activities => res.json(activities));
 });
 
-// app.get('/suggestions/listings', (req, res) => {
-//   Listing.findAll().then(listings => res.json(listings));
-// });
+app.get('/suggestions/listings', (req, res) => {
+  Listing.findAll().then(listings => res.json(listings));
+});
 
 app.listen(port, () => {
   console.log(`We be listening on port ${port}`);

@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('lemonloft', 'root', '', {
+const sequelize = new Sequelize('lemonloft', 'root', null, {
   host: 'localhost',
   dialect: 'mysql',
   pool: {
@@ -15,9 +15,10 @@ sequelize
 .then(() => {
   console.log('Connected');
 })
-.catch(err => {
+.catch((err) => {
   console.log('Unable to connect');
-});
+})
+.done();
 
 var Activity = sequelize.define('activities', {
   'id': {
@@ -35,43 +36,43 @@ var Activity = sequelize.define('activities', {
     type: Sequelize.INTEGER
   },
   'rating': {
-    type: Sequelize.DECIMAL
+    type: Sequelize.FLOAT
   },
   'numComments': {
     type: Sequelize.INTEGER
   },
   'location': {
-    type: Sequelize.STRING
+    type: Sequelize.STRING(100)
   }
 }, {
     timestamps: false
 });
 
-var Location = sequelize.define('locations', {
-  'id': {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  'location': {
-    type: Sequelize.STRING(50)
-  }
-}, {
-  timestamps: false
-});
+// var Location = sequelize.define('locations', {
+//   'id': {
+//     type: Sequelize.INTEGER,
+//     primaryKey: true,
+//     autoIncrement: true
+//   },
+//   'location': {
+//     type: Sequelize.STRING(50)
+//   }
+// }, {
+//   timestamps: false
+// });
 
-var Image = sequelize.define('images', {
-  'id': {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  'url': {
-    type: Sequelize.STRING(300)
-  }
-}, {
-  timestamps: false
-});
+// var Image = sequelize.define('images', {
+//   'id': {
+//     type: Sequelize.INTEGER,
+//     primaryKey: true,
+//     autoIncrement: true
+//   },
+//   'url': {
+//     type: Sequelize.STRING(300)
+//   }
+// }, {
+//   timestamps: false
+// });
 
 var Listing = sequelize.define('listings', {
   'id': {
@@ -80,28 +81,28 @@ var Listing = sequelize.define('listings', {
     autoIncrement: true
   },
   'title': {
-    type: Sequelize.STRING(50)
-  },
-  'imageUrl': {
     type: Sequelize.STRING(300)
   },
-  'image': {
-    type: Sequelize.INTEGER
+  'mainImageUrl': {
+    type: Sequelize.STRING(300)
   },
+  // 'image': {
+  //   type: Sequelize.INTEGER
+  // },
   'cost': {
     type: Sequelize.INTEGER
   },
   'rating': {
-    type: Sequelize.DECIMAL
+    type: Sequelize.FLOAT
   },
   'numComments': {
     type: Sequelize.INTEGER
   },
   'location': {
-    type: Sequelize.INTEGER
+    type: Sequelize.STRING(100)
   },
   'roomType': {
-    type: Sequelize.STRING(50)
+    type: Sequelize.STRING(100)
   }
 }, {
   timestamps: false
@@ -110,7 +111,7 @@ var Listing = sequelize.define('listings', {
 module.exports = {
   sequelize,
   Activity,
-  Listing,
-  Location,
-  Image
+  Listing
+  // Location,
+  // Image
 }
