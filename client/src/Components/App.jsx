@@ -4,6 +4,7 @@ import ActivityHeader from './Activities/ActivityHeader.jsx';
 import ActivityCarousel from './Activities/ActivityCarousel.jsx';
 import ListingHeader from './Listings/ListingHeader.jsx';
 import ListingCarousel from './Listings/ListingCarousel.jsx';
+import GlobalStyle from './globalStyle.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -43,6 +44,7 @@ class App extends React.Component {
         <ActivityCarousel activities={this.state.activities} />
         <ListingHeader />
         <ListingCarousel listings={this.state.listings} />
+        <GlobalStyle />
       </div>
     )
   }
