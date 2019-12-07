@@ -40,10 +40,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <ActivityHeader />
-        <ActivityCarousel activities={this.state.activities} />
         <ListingHeader />
         <ListingCarousel listings={this.state.listings} />
+        <ActivityHeader />
+        <ActivityCarousel activities={this.state.activities} />
         <GlobalStyle />
       </div>
     )
