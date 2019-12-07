@@ -1,55 +1,63 @@
 import React from 'react';
 import styled from 'styled-components';
+import { IoIosStar } from 'react-icons/io';
 
 const Title = styled.div`
   font-weight: 800;
-  font-size: 16px;
+  font-size: 18px;
   text-align: left;
   color: #484848;
-`;
+`
 
 const Cost = styled.div`
   font-weight: 400;
   font-size: 14px;
   text-align: left;
   color: #484848;
-`;
+`
 
 const Rating = styled.div`
   font-weight: 800;
   font-size: 12px;
   text-align: left;
-  color: #484848;
-`;
+  color: #008489;
+`
 
 const NumComments = styled.div`
   font-weight: 200;
   font-size: 12px;
   text-align: left;
-  color: #484848;
-`;
+  color: #767676;
+`
+
+const Icon = styled(IoIosStar)`
+  color: #008489;
+`
 
 const Activity = ({ activity }) => {
   return (
     <div className="activity-item">
+    <img src={activity.image_url} className="activity-item-image" />
       <Title>
-      <div className="activity-item-title">
-        {activity.title}
-      </div>
+        <div className="activity-item-title">
+          {activity.title}
+        </div>
       </Title>
-      <img src={activity.image_url} className="activity-item-image" />
       <Cost>
-      <div className="activity-item-cost">
-        {`From $${activity.cost}/per person`}
-      </div>
+        <div className="activity-item-cost">
+          {`From $${activity.cost}/per person`}
+        </div>
       </Cost>
-      <div className="activity-item-rating">
-        {activity.rating}
-      </div>
-      <div className="activity-item-num-comments">
-        {`(${activity.num_comments})`}
-      </div>
-      <br></br>
+      <Rating>
+        <div className="activity-item-rating">
+          {activity.rating}<Icon><IoIosStar /></Icon>
+        </div>
+      </Rating>
+      <NumComments>
+        <div className="activity-item-num-comments">
+          {`(${activity.num_comments})`}
+        </div>
+      </NumComments>
     </div>
   )
 }
