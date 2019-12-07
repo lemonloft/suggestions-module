@@ -37,12 +37,12 @@ const Icon = styled(IoIosStar)`
 const Activity = ({ activity }) => {
   return (
     <div className="activity-item">
+    <img src={activity.image_url} className="activity-item-image" />
       <Title>
         <div className="activity-item-title">
           {activity.title}
         </div>
       </Title>
-      <img src={activity.image_url} className="activity-item-image" />
       <Cost>
         <div className="activity-item-cost">
           {`From $${activity.cost}/per person`}
