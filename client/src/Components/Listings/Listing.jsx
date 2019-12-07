@@ -1,40 +1,45 @@
 import React from 'react';
 import styled from 'styled-components';
+import { IoIosStar } from 'react-icons/io';
 
 const Title = styled.div`
   font-weight: 800;
   font-size: 14px;
   text-align: left;
   color: #484848;
-`;
+`
 
 const Details = styled.div`
   font-weight: 800;
   font-size: 10px;
   text-align: left;
   color: #767676;
-`;
+`
 
 const Cost = styled.div`
   font-weight: 400;
   font-size: 14px;
   text-align: left;
   color: #484848;
-`;
+`
 
 const Rating = styled.div`
   font-weight: 800;
   font-size: 12px;
   text-align: left;
-  color: #008489;
-`;
+  color: #484848;
+`
 
 const NumComments = styled.div`
   font-weight: 200;
   font-size: 12px;
   text-align: left;
   color: #767676;
-`;
+`
+
+const Icon = styled(IoIosStar)`
+  color: #008489;
+`
 
 const Listing = ({ listing }) => {
   return (
@@ -57,7 +62,7 @@ const Listing = ({ listing }) => {
       </Cost>
       <Rating>
         <div className="listing-item-rating">
-          {listing.rating}
+          <Icon><IoIosStar /></Icon> {listing.rating}
         </div>
       </Rating>
       <NumComments>
@@ -65,7 +70,6 @@ const Listing = ({ listing }) => {
           {`(${listing.num_comments})`}
         </div>
       </NumComments>
-      <br></br>
     </div>
   )
 }
