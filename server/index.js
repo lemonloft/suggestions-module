@@ -4,7 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const port = 3000;
 const morgan = require('morgan');
-const { Activity, Listing } = require('../database/index.js');
+const { Activity, Listing, Location } = require('../database/index.js');
 
 app.use('/', express.static(path.join(__dirname, '../client/dist'))); // learn more
 
@@ -30,9 +30,14 @@ app.get('/suggestions/listings', (req, res) => {
   });
 });
 
-// app.get('/suggestions/locations', (req, res) => {
-//   Location.findAll().then(locations => res.json(locations));
-// });
+app.get('/suggestions/locations', (req, res) => {
+  Location.findAll().then((locations) => {
+    res.status(200).json(locations);
+  })
+  .catch((err) => {
+    res.status(404).send(err);
+  });
+});
 
 app.listen(port, () => {
   console.log(`We be listening on port ${port}`);
