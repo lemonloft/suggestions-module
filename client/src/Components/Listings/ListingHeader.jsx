@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Header = styled.div`
   font-weight: 800;
   font-size: 24px;
-  text-align: left;
+  text-align: center;
   color: #484848;
 `
 

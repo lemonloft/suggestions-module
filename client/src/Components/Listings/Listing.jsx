@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { IoIosStar } from 'react-icons/io';
-// import Carousel from 'react-bootstrap/Carousel';
 
 const Title = styled.div`
   font-weight: 800;
