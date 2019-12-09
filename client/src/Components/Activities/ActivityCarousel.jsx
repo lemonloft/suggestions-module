@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const CarouselWrapper = styled.div`
   background-color: white;
-  width: 300px;
+  width: 350px;
   height: 350px;
   display: flex;
   align-items: center;

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const CarouselWrapper = styled.div`
   background-color: white;
-  width: 300px;
+  width: 350px;
   height: 350px;
   display: flex;
   align-items: center;
@@ -16,7 +16,7 @@ const ListingCarousel = ({ listings }) => (
   <CarouselWrapper>
     <div className="listing-carousel">
       <Carousel>
-        {listings.slice(0, 10).map((listing) => {
+        {listings.slice(14, 24).map((listing) => {
           return <Carousel.Item><Listing listing={listing} /></Carousel.Item>
         })}
       </Carousel>
