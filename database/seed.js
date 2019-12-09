@@ -10,7 +10,8 @@ const seedActivity = () => {
     let activity = {};
 
     let location = faker.address.city();
-    let image_url = `https://loremflickr.com/320/240/travel/all?random`;
+    let image_url = `https://lemonloft.s3-us-west-1.amazonaws.com/ex/ia_100`;
+    let suffix = '0';
     let verb = activityVerbs[Math.floor(Math.random() * activityVerbs.length)];
     let thing = activityThings[Math.floor(Math.random() * activityThings.length)];
     let title = `${verb} ${thing} ${location}`;
@@ -29,9 +30,15 @@ const seedActivity = () => {
       num_comments = Math.ceil((Math.random() * (100 - 1) + 1));
     };
 
+    if (i < 10) {
+      suffix += i.toString();
+    } else {
+      suffix = i.toString();
+    }
+
     activity.id = i;
     activity.title = title;
-    activity.image_url = `${image_url}=${i}`;
+    activity.image_url = `${image_url}${suffix}.jpg`;
     activity.cost = Math.ceil((Math.random() * (150 - 51) + 50));
     activity.rating = rating;
     activity.num_comments = num_comments;
@@ -66,14 +73,16 @@ const listingTypes = [
   ['Suite', 'Entire hotel room']
 ];
 const listingDescs = ['in the heart of', 'in the center of', 'in', 'in', 'in', 'close to', 'with views of', 'with amazing views of', 'among olive trees in', 'with garden in'];
-  
+const imageRooms = ['bedtheme', 'livingroom'];  
+
 const seedListing = () => {
   for (let i = 0; i <= 100; i++) {
 
     let listing = {};
-    
     let location = faker.address.city();
-    let main_image_url = `https://loremflickr.com/320/240/luxury,property/all?random`;
+    let room = imageRooms[Math.floor(Math.random() * imageRooms.length)];
+    let main_image_url = `https://lemonloft.s3-us-west-1.amazonaws.com/${room}/ia_100`;
+    let suffix = '0';
     let adj = listingAdjs[Math.floor(Math.random() * listingAdjs.length)];
     let type = listingTypes[Math.floor(Math.random() * listingTypes.length)];
     let desc = listingDescs[Math.floor(Math.random() * listingDescs.length)];
@@ -93,9 +102,15 @@ const seedListing = () => {
       num_comments = Math.ceil((Math.random() * (100 - 1) + 1));
     };
 
+    if (i < 10) {
+      suffix += i.toString();
+    } else {
+      suffix = i.toString();
+    }
+
     listing.id = i;
     listing.title = title;
-    listing.main_image_url = `${main_image_url}=${i}`;
+    listing.main_image_url = `${main_image_url}${suffix}.jpg`;
     // listing.image = faker.image.imageUrl();
     listing.cost = Math.ceil((Math.random() * (400 - 70) + 70))
     listing.rating = rating;
