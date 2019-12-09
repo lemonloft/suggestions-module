@@ -5,6 +5,7 @@ const activityVerbs = ['Experience', 'Experience', 'Expand your travels with', '
 const activityThings = ['a photoshoot in', 'a tour of', 'a walking tour in', 'an art show in', 'cuisine extraordinaire in', 'a nature tour in', 'a flight around'];
 
 const seedActivity = () => {
+  
   for (let i = 0; i <= 100; i++) {
     let activity = {};
 
@@ -114,37 +115,3 @@ const seedListing = () => {
 };
 
 seedListing();
-
-// const seedLocation = () => {
-//   for (let i = 0; i <= 100; i++) {
-//     let location = {};
-
-//     location.id = i;
-//     location.location = faker.address.city();
-//     // { location } = faker.address.city();
-
-//     Location.sync( { force: true })
-//     .then(() => {
-//       return Location.create(location)
-//       // .then((locations) => {
-//       //   return Listing.update(
-//       //     {location: locations.location}
-//       //   )
-//       // })
-//       // .then((locations) => {
-//       //   return Activity.update(
-//       //     {location: locations.location}
-//       //   )
-//       // })
-//       // .catch((err) => {
-//       //   console.log(`Error is ${err}`);
-//       // });
-//     })
-//     .catch((err) => {
-//       console.log(`Err is ${err}`);
-//     });
-    
-//   }
-// }
-
-// seedLocation();
