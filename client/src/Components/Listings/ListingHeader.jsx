@@ -6,7 +6,7 @@ const Header = styled.div`
   font-size: 24px;
   text-align: left;
   color: #484848;
-`;
+`
 
 const ListingHeader = (props) => (
   <div>
