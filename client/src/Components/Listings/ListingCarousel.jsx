@@ -15,8 +15,8 @@ const CarouselWrapper = styled.div`
 const ListingCarousel = ({ listings }) => (
   <CarouselWrapper>
     <div className="listing-carousel">
-      <Carousel>
-        {listings.slice(14, 24).map((listing) => {
+      <Carousel interval={null}>
+        {listings.slice(3, 13).map((listing) => {
           return <Carousel.Item><Listing listing={listing} /></Carousel.Item>
         })}
       </Carousel>

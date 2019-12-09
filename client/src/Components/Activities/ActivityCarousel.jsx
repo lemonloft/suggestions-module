@@ -5,8 +5,8 @@ import styled from 'styled-components';
 
 const CarouselWrapper = styled.div`
   background-color: white;
-  width: 350px;
-  height: 350px;
+  width: 210px;
+  height: 410px;
   display: flex;
   align-items: center;
   margin: 0 auto;
@@ -15,8 +15,8 @@ const CarouselWrapper = styled.div`
 const ActivityCarousel = ({ activities }) => (
   <CarouselWrapper>
     <div className="activity-carousel">
-      <Carousel>
-        {activities.slice(0, 10).map((activity) => {
+      <Carousel interval={null}>
+        {activities.slice(1, 11).map((activity) => {
           return <Carousel.Item><Activity activity={activity} /></Carousel.Item>
         })}
       </Carousel>

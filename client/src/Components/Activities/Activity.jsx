@@ -34,10 +34,17 @@ const Icon = styled(IoIosStar)`
   color: #008489;
 `
 
+const Image = styled.div`
+  height: 273px;
+  width: 205px;
+`
+
 const Activity = ({ activity }) => {
   return (
     <div className="activity-item">
-    <img src={activity.image_url} className="activity-item-image" />
+    <Image>
+    <img src={activity.image_url} height="273px" width="205px" className="activity-item-image" />
+    </Image>
       <Title>
         <div className="activity-item-title">
           {activity.title}

@@ -9,7 +9,8 @@ const seedActivity = () => {
     let activity = {};
 
     let location = faker.address.city();
-    let image_url = `https://loremflickr.com/320/240/travel/all?random`;
+    let image_url = `https://lemonloft.s3-us-west-1.amazonaws.com/ex/ia_100`;
+    let suffix = '0';
     let verb = activityVerbs[Math.floor(Math.random() * activityVerbs.length)];
     let thing = activityThings[Math.floor(Math.random() * activityThings.length)];
     let title = `${verb} ${thing} ${location}`;
@@ -28,9 +29,15 @@ const seedActivity = () => {
       num_comments = Math.ceil((Math.random() * (100 - 1) + 1));
     };
 
+    if (i < 10) {
+      suffix += i.toString();
+    } else {
+      suffix = i.toString();
+    }
+
     activity.id = i;
     activity.title = title;
-    activity.image_url = `${image_url}=${i}`;
+    activity.image_url = `${image_url}${suffix}.jpg`;
     activity.cost = Math.ceil((Math.random() * (150 - 51) + 50));
     activity.rating = rating;
     activity.num_comments = num_comments;
