@@ -42,8 +42,8 @@ const Icon = styled(IoIosStar)`
 `
 
 const Image = styled.div`
-  height: 240px;
-  width: 350px;
+  height: 210px;
+  width: 310px;
   border: 1px;
 `
 
@@ -51,7 +51,7 @@ const Wrapper = styled.div`
   height: 350px;
   display: flex;
   flex-direction: column;
-  padding: 0px 18px 30px !important;
+  padding: 10px !important;
 `
 
 const Listing = ({ listing }) => {
@@ -60,7 +60,7 @@ const Listing = ({ listing }) => {
       <div className="listing-item">
         <Image>
           <div className="image-resize">
-            <img src={listing.main_image_url} style={{ borderRadius: 5 }} height="240px" width="360px" className="listing-item-image" />
+            <img src={listing.main_image_url} style={{ borderRadius: 5 }} height="210px" width="310px" className="listing-item-image" />
           </div>
         </Image>
         <Details>

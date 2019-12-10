@@ -35,16 +35,16 @@ const Icon = styled(IoIosStar)`
 `
 
 const Image = styled.div`
-  height: 273px;
-  width: 205px;
+  height: 300px;
+  width: 230px;
   border: 1px
 `
 
 const Wrapper = styled.div`
-  height: 400px;
+  height: 420px;
   display: flex;
   flex-direction: column;
-  padding: 0px 18px 30px !important;
+  padding: 10px !important;
 `
 
 const Activity = ({ activity }) => {
@@ -52,7 +52,7 @@ const Activity = ({ activity }) => {
     <Wrapper>
       <div className="activity-item">
         <Image>
-          <img src={activity.image_url} style={{ borderRadius: 5 }} height="273px" width="205px" className="activity-item-image" />
+          <img src={activity.image_url} style={{ borderRadius: 5 }} height="300px" width="230px" className="activity-item-image" />
         </Image>
         <Title>
           <div className="activity-item-title">
