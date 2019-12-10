@@ -1,27 +1,27 @@
 import React from 'react';
 import Listing from './Listing.jsx';
-import Carousel from 'react-bootstrap/Carousel';
 import styled from 'styled-components';
 
-const CarouselWrapper = styled.div`
-  background-color: white;
-  width: 350px;
+const Container = styled.div`
   height: 350px;
   display: flex;
-  align-items: center;
-  margin: 0 auto;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  justify-content: flex-start;
+  ::-webkit-scrollbar {
+    display: none;
+ }
 `
 
 const ListingCarousel = ({ listings }) => (
-  <CarouselWrapper>
     <div className="listing-carousel">
-      <Carousel interval={null}>
+      <Container>
         {listings.slice(3, 13).map((listing) => {
-          return <Carousel.Item><Listing listing={listing} /></Carousel.Item>
+          return <Listing listing={listing} />
         })}
-      </Carousel>
+      </Container>
     </div>
-  </CarouselWrapper>
 )
 
 export default ListingCarousel;

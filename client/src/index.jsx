@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './Components/App.jsx';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import SuggestionsModule from './Components/App.jsx';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<SuggestionsModule />, document.getElementById('app'));

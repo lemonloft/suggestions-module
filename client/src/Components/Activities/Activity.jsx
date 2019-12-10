@@ -37,35 +37,45 @@ const Icon = styled(IoIosStar)`
 const Image = styled.div`
   height: 273px;
   width: 205px;
+  border: 1px
+`
+
+const Wrapper = styled.div`
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 18px 30px !important;
 `
 
 const Activity = ({ activity }) => {
   return (
-    <div className="activity-item">
-    <Image>
-    <img src={activity.image_url} height="273px" width="205px" className="activity-item-image" />
-    </Image>
-      <Title>
-        <div className="activity-item-title">
-          {activity.title}
-        </div>
-      </Title>
-      <Cost>
-        <div className="activity-item-cost">
-          {`From $${activity.cost}/per person`}
-        </div>
-      </Cost>
-      <Rating>
-        <div className="activity-item-rating">
-          {activity.rating}<Icon><IoIosStar /></Icon>
-        </div>
-      </Rating>
-      <NumComments>
-        <div className="activity-item-num-comments">
-          {`(${activity.num_comments})`}
-        </div>
-      </NumComments>
-    </div>
+    <Wrapper>
+      <div className="activity-item">
+        <Image>
+          <img src={activity.image_url} style={{ borderRadius: 5 }} height="273px" width="205px" className="activity-item-image" />
+        </Image>
+        <Title>
+          <div className="activity-item-title">
+            {activity.title}
+          </div>
+        </Title>
+        <Cost>
+          <div className="activity-item-cost">
+            {`From $${activity.cost}/per person`}
+          </div>
+        </Cost>
+        <Rating>
+          <div className="activity-item-rating">
+            {activity.rating}<Icon><IoIosStar /></Icon>
+          </div>
+        </Rating>
+        <NumComments>
+          <div className="activity-item-num-comments">
+            {`(${activity.num_comments})`}
+          </div>
+        </NumComments>
+      </div>
+    </Wrapper>
   )
 }
 

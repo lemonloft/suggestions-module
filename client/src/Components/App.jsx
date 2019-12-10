@@ -37,6 +37,14 @@ class App extends React.Component {
     });
   }
 
+  // scrollRightHandler() {
+
+  // }
+
+  // scrollLeftHandler() {
+
+  // }
+
   render() {
     return (
       <div>

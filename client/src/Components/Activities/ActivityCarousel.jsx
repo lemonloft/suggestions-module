@@ -1,27 +1,27 @@
 import React from 'react';
 import Activity from './Activity.jsx';
-import Carousel from 'react-bootstrap/Carousel';
 import styled from 'styled-components';
 
-const CarouselWrapper = styled.div`
-  background-color: white;
-  width: 210px;
-  height: 410px;
+const Container = styled.div`
+  height: 400px;
   display: flex;
-  align-items: center;
-  margin: 0 auto;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  justify-content: flex-start;
+  ::-webkit-scrollbar {
+    display: none;
+ }
 `
 
 const ActivityCarousel = ({ activities }) => (
-  <CarouselWrapper>
     <div className="activity-carousel">
-      <Carousel interval={null}>
+      <Container>
         {activities.slice(1, 11).map((activity) => {
-          return <Carousel.Item><Activity activity={activity} /></Carousel.Item>
+          return <Activity activity={activity} />
         })}
-      </Carousel>
+      </Container>
     </div>
-  </CarouselWrapper>
 )
 
 export default ActivityCarousel;
