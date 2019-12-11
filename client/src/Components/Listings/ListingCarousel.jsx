@@ -1,27 +1,53 @@
 import React from 'react';
 import Listing from './Listing.jsx';
-import Carousel from 'react-bootstrap/Carousel';
 import styled from 'styled-components';
+import ArrowLeft from '../ArrowLeft.jsx';
+import ArrowRight from '../ArrowRight.jsx';
 
-const CarouselWrapper = styled.div`
-  background-color: white;
-  width: 350px;
+const Container = styled.div`
   height: 350px;
-  display: flex;
-  align-items: center;
+  width: 990px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  justify-content: flex-start;
+  ::-webkit-scrollbar {
+    display: none;
+ }
 `
 
-const ListingCarousel = ({ listings }) => (
-  <CarouselWrapper>
+const ArrowLeftWrapper = styled.div`
+  position: absolute;
+  top: 150px;
+  left: 150px;
+`
+
+const ArrowRightWrapper = styled.div`
+  position: absolute;
+  top: 150px;
+  right: 150px;
+`
+
+const ListingCarousel = ({ listings, scrollRight, scrollLeft }) => {
+  return (
     <div className="listing-carousel">
-      <Carousel interval={null}>
+      <ArrowLeftWrapper>
+        <ArrowLeft scrollLeft={scrollLeft} />
+      </ArrowLeftWrapper>
+      <Container>
         {listings.slice(3, 13).map((listing) => {
-          return <Carousel.Item><Listing listing={listing} /></Carousel.Item>
+          return <Listing listing={listing} />
         })}
-      </Carousel>
+      </Container>
+      <ArrowRightWrapper>
+        <ArrowRight scrollRight={scrollRight} />
+      </ArrowRightWrapper>
     </div>
-  </CarouselWrapper>
-)
+  )
+}
+
+// )
 
 export default ListingCarousel;
