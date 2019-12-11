@@ -1,17 +1,30 @@
 import React from 'react';
 import Activity from './Activity.jsx';
+import styled from 'styled-components';
+import ArrowLeft from '../ArrowLeft.jsx';
+import ArrowRight from '../ArrowRight.jsx';
 
-const ActivityCarousel = ({ activities }) => (
-  <div className="activity-carousel">
-    {activities.slice(0, 10).map((activity) => {
-      return <Activity activity={activity} />
-    })}
-  </div>
-)
+const Container = styled.div`
+  height: 420px;
+  width: 990px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  justify-content: flex-start;
+  ::-webkit-scrollbar {
+    display: none;
+ }
+ z-index: 1;
+`
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 export default ActivityCarousel;
 =======
+=======
+>>>>>>> master
 const ArrowLeftWrapper = styled.div`
   position: absolute;
   bottom: 110px;
@@ -31,7 +44,11 @@ const ActivityCarousel = ({ activities, scrollRight, scrollLeft }) => {
         <ArrowLeft scrollLeft={scrollLeft} />
       </ArrowLeftWrapper>
       <Container>
+<<<<<<< HEAD
         {activities.slice(2, 12).map((activity) => {
+=======
+        {activities.slice(1, 11).map((activity) => {
+>>>>>>> master
           return <Activity activity={activity} />
         })}
       </Container>
@@ -43,4 +60,7 @@ const ActivityCarousel = ({ activities, scrollRight, scrollLeft }) => {
 }
 
 export default ActivityCarousel;
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> master

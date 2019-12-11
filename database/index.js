@@ -42,11 +42,8 @@ var Activity = sequelize.define('activities', {
     type: Sequelize.INTEGER
   },
   'location': {
-    type: Sequelize.STRING(500)
+    type: Sequelize.STRING(100)
   }
-  // 'location_id': {
-  //   type: Sequelize.INTEGER
-  // }
 }, {
     timestamps: false
 });
@@ -101,11 +98,8 @@ var Listing = sequelize.define('listings', {
   'num_comments': {
     type: Sequelize.INTEGER
   },
-  // 'location_id': {
-  //   type: Sequelize.INTEGER
-  // },
   'location': {
-    type: Sequelize.STRING(500)
+    type: Sequelize.STRING(100)
   },
   'room_type': {
     type: Sequelize.STRING(100)
@@ -114,16 +108,9 @@ var Listing = sequelize.define('listings', {
   timestamps: false
 });
 
-// Listing.belongsTo(Location);
-// Activity.belongsTo(Location);
-
-// Listing.hasOne(Location);
-// Activity.hasOne(Location);
-
 module.exports = {
   sequelize,
   Activity,
   Listing
-  // Location
   // Image
 }

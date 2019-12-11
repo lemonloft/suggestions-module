@@ -13,6 +13,9 @@ class App extends React.Component {
       activities: [],
       listings: []
     };
+
+    this.scrollRight = this.scrollRight.bind(this);
+    this.scrollLeft = this.scrollLeft.bind(this);
   }
 
   componentDidMount() {
@@ -37,13 +40,21 @@ class App extends React.Component {
     });
   }
 
+  scrollRight() {
+
+  }
+
+  scrollLeft() {
+
+  }
+
   render() {
     return (
       <div>
         <ListingHeader />
-        <ListingCarousel listings={this.state.listings} />
+        <ListingCarousel listings={this.state.listings} scrollRight={this.scrollRight} scrollLeft={this.scrollLeft} />
         <ActivityHeader />
-        <ActivityCarousel activities={this.state.activities} />
+        <ActivityCarousel activities={this.state.activities} scrollRight={this.scrollRight} scrollLeft={this.scrollLeft} />
         <GlobalStyle />
       </div>
     )
