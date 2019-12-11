@@ -5,11 +5,21 @@ const activityVerbs = ['Experience', 'Experience', 'Expand your travels with', '
 const activityThings = ['a photoshoot in', 'a tour of', 'a walking tour in', 'an art show in', 'cuisine extraordinaire in', 'a nature tour in', 'a flight around'];
 
 const seedActivity = () => {
+<<<<<<< Updated upstream
   for (let i = 0; i <= 100; i++) {
     let activity = {};
 
     let location = faker.address.city();
     let image_url = `https://loremflickr.com/320/240/travel/all?random`;
+=======
+  
+  for (let i = 0; i < 100; i++) {
+    let activity = {};
+
+    let location = faker.address.city();
+    let image_url = `https://lemonloft.s3-us-west-1.amazonaws.com/ex/ex_100`;
+    let suffix = '0';
+>>>>>>> Stashed changes
     let verb = activityVerbs[Math.floor(Math.random() * activityVerbs.length)];
     let thing = activityThings[Math.floor(Math.random() * activityThings.length)];
     let title = `${verb} ${thing} ${location}`;
@@ -65,14 +75,23 @@ const listingTypes = [
   ['Suite', 'Entire hotel room']
 ];
 const listingDescs = ['in the heart of', 'in the center of', 'in', 'in', 'in', 'close to', 'with views of', 'with amazing views of', 'among olive trees in', 'with garden in'];
+<<<<<<< Updated upstream
   
+=======
+
+>>>>>>> Stashed changes
 const seedListing = () => {
-  for (let i = 0; i <= 100; i++) {
+  for (let i = 0; i < 100; i++) {
 
     let listing = {};
     
     let location = faker.address.city();
+<<<<<<< Updated upstream
     let main_image_url = `https://loremflickr.com/320/240/luxury,property/all?random`;
+=======
+    let main_image_url = `https://lemonloft.s3-us-west-1.amazonaws.com/li/li_100`;
+    let suffix = '0';
+>>>>>>> Stashed changes
     let adj = listingAdjs[Math.floor(Math.random() * listingAdjs.length)];
     let type = listingTypes[Math.floor(Math.random() * listingTypes.length)];
     let desc = listingDescs[Math.floor(Math.random() * listingDescs.length)];

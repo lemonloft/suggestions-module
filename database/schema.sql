@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS lemonloft;
+DROP DATABASE IF EXISTS suggestions;
 
-CREATE DATABASE lemonloft;
+CREATE DATABASE suggestions;
 
-USE lemonloft;
+USE suggestions;
 
 -- CREATE TABLE `locations` (
 --   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
