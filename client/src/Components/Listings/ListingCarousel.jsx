@@ -4,6 +4,18 @@ import styled from 'styled-components';
 import ArrowLeft from '../ArrowLeft.jsx';
 import ArrowRight from '../ArrowRight.jsx';
 
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+const ListingCarousel = ({ listings }) => (
+  <div className="listing-carousel">
+    {listings.slice(0, 10).map((listing) => {
+      return <Listing listing={listing} />
+    })}
+  </div>
+)
+=======
+=======
+>>>>>>> master
 const Container = styled.div`
   height: 350px;
   width: 990px;
@@ -37,7 +49,11 @@ const ListingCarousel = ({ listings, scrollRight, scrollLeft }) => {
         <ArrowLeft scrollLeft={scrollLeft} />
       </ArrowLeftWrapper>
       <Container>
+<<<<<<< HEAD
+        {listings.slice(2, 12).map((listing) => {
+=======
         {listings.slice(3, 13).map((listing) => {
+>>>>>>> master
           return <Listing listing={listing} />
         })}
       </Container>
@@ -49,5 +65,9 @@ const ListingCarousel = ({ listings, scrollRight, scrollLeft }) => {
 }
 
 // )
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+=======
+>>>>>>> master
 
 export default ListingCarousel;
