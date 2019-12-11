@@ -7,23 +7,10 @@ const Header = styled.div`
   width: 970px;
   font-weight: 800;
   font-size: 24px;
-<<<<<<< HEAD
-<<<<<<< Updated upstream
   text-align: left;
   color: #484848;
-`;
-=======
-  color: #484848;
-  padding: 10px;
-  text align: left;
-`
->>>>>>> Stashed changes
-=======
-  text-align: center;
-  color: #484848;
   padding: 10px;
 `
->>>>>>> master
 
 const ActivityHeader = (props) => (
   <div>

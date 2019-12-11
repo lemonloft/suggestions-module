@@ -19,12 +19,6 @@ const Container = styled.div`
  z-index: 1;
 `
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-export default ActivityCarousel;
-=======
-=======
->>>>>>> master
 const ArrowLeftWrapper = styled.div`
   position: absolute;
   bottom: 110px;
@@ -44,11 +38,7 @@ const ActivityCarousel = ({ activities, scrollRight, scrollLeft }) => {
         <ArrowLeft scrollLeft={scrollLeft} />
       </ArrowLeftWrapper>
       <Container>
-<<<<<<< HEAD
         {activities.slice(2, 12).map((activity) => {
-=======
-        {activities.slice(1, 11).map((activity) => {
->>>>>>> master
           return <Activity activity={activity} />
         })}
       </Container>
@@ -60,7 +50,3 @@ const ActivityCarousel = ({ activities, scrollRight, scrollLeft }) => {
 }
 
 export default ActivityCarousel;
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> master
