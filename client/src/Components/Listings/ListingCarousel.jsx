@@ -37,7 +37,7 @@ const ListingCarousel = ({ listings, scrollRight, scrollLeft }) => {
         <ArrowLeft scrollLeft={scrollLeft} />
       </ArrowLeftWrapper>
       <Container>
-        {listings.slice(2, 12).map((listing) => {
+        {listings.slice(0, 10).map((listing) => {
           return <Listing listing={listing} />
         })}
       </Container>
