@@ -21,7 +21,7 @@ class App extends React.Component {
   componentDidMount() {
     ajax({
       method: 'get',
-      url: '/suggestions/activities',
+      url: 'http://54.67.43.43/suggestions/activities',
       success: (data) => {
         this.setState({
           activities: data
@@ -31,7 +31,7 @@ class App extends React.Component {
 
     ajax({
       method: 'get',
-      url: '/suggestions/listings',
+      url: 'http://54.67.43.43/suggestions/listings',
       success: (data) => {
         this.setState({
           listings: data

@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('lemonloft', 'root', null, {
-  host: 'localhost',
+const sequelize = new Sequelize('suggestions', 'root', null, {
+  host: 'mysql-dev',
   dialect: 'mysql',
   pool: {
     max: 5,
