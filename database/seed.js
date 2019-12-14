@@ -10,7 +10,7 @@ const seedActivity = () => {
     let activity = {};
 
     let location = faker.address.city();
-    let image_url = 'https://lemonloft.s3-us-west-1.amazonaws.com/ex/ex_100';
+    let image_url = 'https://lemonloft.s3-us-west-1.amazonaws.com/a/a_100';
     let suffix = '0';
     let verb = activityVerbs[Math.floor(Math.random() * activityVerbs.length)];
     let thing = activityThings[Math.floor(Math.random() * activityThings.length)];
