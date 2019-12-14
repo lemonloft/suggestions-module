@@ -38,7 +38,7 @@ const ActivityCarousel = ({ activities, scrollRight, scrollLeft }) => {
         <ArrowLeft scrollLeft={scrollLeft} />
       </ArrowLeftWrapper>
       <Container>
-        {activities.slice(2, 12).map((activity) => {
+        {activities.slice(0, 10).map((activity) => {
           return <Activity activity={activity} />
         })}
       </Container>

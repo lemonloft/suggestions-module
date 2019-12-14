@@ -4,10 +4,13 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const port = 3002;
 const morgan = require('morgan');
-const { Activity, Listing, Location } = require('../database/index.js');
+const { Activity, Listing } = require('../database/index.js');
 const cors = require('cors');
+const Sequelize = require('Sequelize');
+const Op = Sequelize.Op;
 
 app.use('/', express.static(path.join(__dirname, '../client/dist'))); // learn more
+app.use('/:id', express.static(path.join(__dirname, '../client/dist')));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -23,6 +26,16 @@ app.get('/suggestions/activities', (req, res) => {
   });
 });
 
+app.get('/suggestions/activities/:id', (req, res) => {
+  let random_id = Math.floor(Math.random() * 99);
+  Activity.findAll({ where: {id: {[Op.between]: [random_id, random_id + 10]} }}).then((activities) => {
+    res.status(200).json(activities);
+  })
+  .catch((err) => {
+    res.status(404).send(err);
+  });
+});
+
 app.get('/suggestions/listings', (req, res) => {
   Listing.findAll().then((listings) => {
     res.status(200).json(listings);
@@ -31,6 +44,18 @@ app.get('/suggestions/listings', (req, res) => {
     res.status(404).send(err);
   });
 });
+
+app.get('/suggestions/listings/:id', (req, res) => {
+  let random_id = Math.floor(Math.random() * 99);
+  Listing.findAll({ where: {id: {[Op.between]: [random_id, random_id + 10]} }}).then((listings) => {
+    res.status(200).json(listings);
+  })
+  .catch((err) => {
+    res.status(404).send(err);
+  });
+});
+
+
 
 // app.get('/suggestions/locations', (req, res) => {
 //   Location.findAll().then((locations) => {
