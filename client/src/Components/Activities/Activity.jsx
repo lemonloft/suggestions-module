@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { IoIosStar } from 'react-icons/io';
+import { FaRegHeart } from 'react-icons/fa';
 
 const Title = styled.div`
   font-weight: 800;
@@ -34,10 +35,15 @@ const Icon = styled(IoIosStar)`
   color: #008489;
 `
 
+const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+`
+
 const Image = styled.div`
   height: 300px;
   width: 225px;
-  border: 1px
+  border: 1px;
 `
 
 const Wrapper = styled.div`
@@ -47,13 +53,29 @@ const Wrapper = styled.div`
   padding: 10px !important;
 `
 
+const Heart = styled(FaRegHeart)`
+  height: 10%;
+  width: 10%;
+  z-index: 1;
+  position: absolute;
+  top: 10%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  padding: 12px 24px;
+  color: white;
+`
+
 const Activity = ({ activity }) => {
   return (
     <Wrapper>
       <div className="activity-item">
-        <Image>
-          <img src={activity.image_url} style={{ borderRadius: 5 }} height="300px" width="225px" className="activity-item-image" />
-        </Image>
+        <ImageWrapper>
+          <Image>
+            <img src={activity.image_url} style={{ borderRadius: 5 }} height="300px" width="225px" className="activity-item-image" />
+            <Heart><FaRegHeart /></Heart>
+          </Image>
+        </ImageWrapper>
         <Title>
           <div className="activity-item-title">
             {activity.title}

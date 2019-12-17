@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { IoIosStar } from 'react-icons/io';
+import { FaRegHeart } from 'react-icons/fa';
 
 const Title = styled.div`
   font-weight: 800;
@@ -41,6 +42,11 @@ const Icon = styled(IoIosStar)`
   color: #008489;
 `
 
+const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+`
+
 const Image = styled.div`
   height: 210px;
   width: 310px;
@@ -54,15 +60,29 @@ const Wrapper = styled.div`
   padding: 10px !important;
 `
 
+const Heart = styled(FaRegHeart)`
+  height: 10%;
+  width: 10%;
+  z-index: 1;
+  position: absolute;
+  top: 10%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  padding: 12px 24px;
+  color: white;
+`
+
 const Listing = ({ listing }) => {
   return (
     <Wrapper>
       <div className="listing-item">
-        <Image>
-          <div className="image-resize">
+        <ImageWrapper>
+          <Image>
             <img src={listing.main_image_url} style={{ borderRadius: 5 }} height="210px" width="310px" className="listing-item-image" />
-          </div>
-        </Image>
+            <Heart><FaRegHeart /></Heart>
+          </Image>
+        </ImageWrapper>
         <Details>
           <div className="listing-item-details">
             {listing.room_type.toUpperCase()} {`\u2022`} {listing.location.toUpperCase()}

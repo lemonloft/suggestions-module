@@ -15,7 +15,8 @@ const Container = styled.div`
   justify-content: flex-start;
   ::-webkit-scrollbar {
     display: none;
- }
+  }
+  position: relative;
 `
 
 const ArrowLeftWrapper = styled.div`
