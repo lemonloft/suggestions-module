@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize('suggestions', 'root', null, {
-  host: 'localhost',
+  host: 'mysql-dev',
   dialect: 'mysql',
   pool: {
     max: 5,
