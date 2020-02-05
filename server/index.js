@@ -6,14 +6,16 @@ const port = 3002;
 const morgan = require('morgan');
 const { Activity, Listing } = require('../database/index.js');
 const cors = require('cors');
-const Sequelize = require('Sequelize');
+const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
+const compression = require('compression');
 
-app.use('/', express.static(path.join(__dirname, '../client/dist'))); // learn more
+app.use('/', express.static(path.join(__dirname, '../client/dist')));
 app.use('/:id', express.static(path.join(__dirname, '../client/dist')));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use(compression());
 app.use(morgan('dev'));
 app.use(cors());
 
@@ -54,8 +56,6 @@ app.get('/suggestions/listings/:id', (req, res) => {
     res.status(404).send(err);
   });
 });
-
-
 
 // app.get('/suggestions/locations', (req, res) => {
 //   Location.findAll().then((locations) => {
