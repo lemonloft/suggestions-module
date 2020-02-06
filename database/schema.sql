@@ -9,7 +9,7 @@ USE suggestions;
 --   `url` VARCHAR(300)
 -- )
 
-DROP TABLE IF EXISTS `activities`;
+-- DROP TABLE IF EXISTS `activities`;
 CREATE TABLE `activities` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `title` VARCHAR(300),
@@ -22,7 +22,7 @@ CREATE TABLE `activities` (
   -- FOREIGN KEY (location_id) REFERENCES locations (id) ON DELETE CASCADE
 )
 
-DROP TABLE IF EXISTS `listings`;
+-- DROP TABLE IF EXISTS `listings`;
 CREATE TABLE `listings` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `title` VARCHAR(300),

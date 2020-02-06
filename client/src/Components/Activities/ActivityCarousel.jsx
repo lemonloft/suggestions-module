@@ -15,8 +15,9 @@ const Container = styled.div`
   justify-content: flex-start;
   ::-webkit-scrollbar {
     display: none;
- }
- z-index: 1;
+  }
+  z-index: 1;
+  position: relative;
 `
 
 const ArrowLeftWrapper = styled.div`
@@ -38,7 +39,7 @@ const ActivityCarousel = ({ activities, scrollRight, scrollLeft }) => {
         <ArrowLeft scrollLeft={scrollLeft} />
       </ArrowLeftWrapper>
       <Container>
-        {activities.slice(2, 12).map((activity) => {
+        {activities.slice(0, 10).map((activity) => {
           return <Activity activity={activity} />
         })}
       </Container>

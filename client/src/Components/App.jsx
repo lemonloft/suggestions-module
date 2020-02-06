@@ -19,10 +19,20 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    let activities_url = '/suggestions/activities';
+    let listings_url = '/suggestions/listings';
+    let endpoint = window.location.pathname;
+
+    if (endpoint) {
+      activities_url += window.location.pathname;
+      listings_url += window.location.pathname;
+    }
+    
     ajax({
       method: 'get',
-      url: '/suggestions/activities',
+      url: activities_url,
       success: (data) => {
+        console.log('activities ', data);
         this.setState({
           activities: data
         })
@@ -31,8 +41,9 @@ class App extends React.Component {
 
     ajax({
       method: 'get',
-      url: '/suggestions/listings',
+      url: listings_url,
       success: (data) => {
+        console.log('listings ', data);
         this.setState({
           listings: data
         })
