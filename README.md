@@ -1,6 +1,6 @@
 # Activites and Listings Suggestions
 
-This suggestions service for Lemon Loft provides the user with things to do and places to stay near the location the user searched.
+This suggestions service for Lemon Loft provides the user with things to do and places to stay near the searched location.
 
 ## Related Projects
 https://github.com/lemonloft/reviews-module
