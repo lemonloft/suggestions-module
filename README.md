@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-# suggestions-module
-=======
 # Activites and Listings Suggestions
 
 This suggestions service for Lemon Loft provides the user with things to do and places to stay near the searched location.
@@ -54,4 +51,3 @@ Read/GET:
 server.get('/suggestions/activities/:id')
 server.get('/suggestions/listings/:id')
 ```
->>>>>>> Stashed changes
