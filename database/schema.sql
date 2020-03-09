@@ -4,12 +4,14 @@ CREATE DATABASE suggestions;
 
 USE suggestions;
 
--- CREATE TABLE `images` (
---   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
---   `url` VARCHAR(300)
--- )
+DROP TABLE IF EXISTS `images`;
+CREATE TABLE `images` (
+  `image_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `url` VARCHAR(300),
+  CONSTRAINT image_id PRIMARY KEY (image_id)
+)
 
--- DROP TABLE IF EXISTS `activities`;
+DROP TABLE IF EXISTS `activities`;
 CREATE TABLE `activities` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `title` VARCHAR(300),
@@ -22,19 +24,19 @@ CREATE TABLE `activities` (
   -- FOREIGN KEY (location_id) REFERENCES locations (id) ON DELETE CASCADE
 )
 
--- DROP TABLE IF EXISTS `listings`;
+DROP TABLE IF EXISTS `listings`;
 CREATE TABLE `listings` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `title` VARCHAR(300),
   `main_image_url` VARCHAR(300),
-  -- `image` INT,
+  `image_id` INT,
   `cost` INT,
   `rating` FLOAT,
   `num_comments` INT,
   -- `location_id` INT,
   `location` VARCHAR(100),
-  `room_type` VARCHAR(100)
-  -- FOREIGN KEY (image) REFERENCES images (id),
+  `room_type` VARCHAR(100),
+  FOREIGN KEY (image_id) REFERENCES images (image_id)
   -- FOREIGN KEY (location_id) REFERENCES locations (id) ON DELETE CASCADE
 )
 

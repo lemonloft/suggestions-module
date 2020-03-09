@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize('suggestions', 'root', null, {
-  host: 'mysql-dev',
+  host: 'localhost', // change to mysql-dev for EC2
   dialect: 'mysql',
   pool: {
     max: 5,
@@ -16,6 +16,7 @@ sequelize
   console.log('Connected');
 })
 .catch((err) => {
+  console.log(err);
   console.log('Unable to connect');
 })
 .done();
