@@ -18,8 +18,10 @@ https://github.com/lemonloft/kd-proxy-server
 
 ### Setting up database/seeding data
 
+```sh
 mysql -u root -p < server/schema.sql
 npm run db:setup
+```
 
 ## start script
 
